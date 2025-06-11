@@ -8,6 +8,13 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    
+    # !!!!!!!!!!!!!! 이 부분을 추가합니다. !!!!!!!!!!!!!!
+    permissions:
+      contents: write # 저장소 콘텐츠에 대한 쓰기 권한 부여
+      pages: write    # GitHub Pages 배포에 대한 쓰기 권한 부여
+      id-token: write # OpenID Connect (OIDC) 토큰 요청 권한 부여 (pages action에 필요)
+    # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     steps:
       - name: Checkout 🛎️
