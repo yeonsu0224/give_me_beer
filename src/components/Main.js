@@ -1,6 +1,5 @@
 // Main.js
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
 import './main.css';
 import initialBeerData from "./beers";
 import Card from './Card';
@@ -9,8 +8,7 @@ import Filter from './Fillter'; // Filter 컴포넌트 임포트
 
 
 const Main = () => {
-    // const navigate = useNavigate(); // 현재 사용되지 않으므로 제거하거나 주석 처리 가능
-
+    
     const [allBeers, setAllBeers] = useState(initialBeerData); 
     const [selectedCountry, setSelectedCountry] = useState(null); 
     const [selectedType, setSelectedType] = useState(null); 
