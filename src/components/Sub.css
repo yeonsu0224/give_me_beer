@@ -1,0 +1,310 @@
+#sub-sec {
+  height:300vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content:space-around; */
+  
+}
+
+#Sub_A_sec{
+  display: flex;
+  gap:2vw;
+  width:100%;
+  aspect-ratio:16/9;
+  padding-top: 5vh;
+  padding-bottom:5vw;
+
+}
+
+#img_A_wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  width:75%;
+  height:100%;
+
+  
+}
+
+.img_A{
+  width:60%;
+  
+  aspect-ratio: 5/5;
+  border-radius:30px;
+
+}
+
+
+
+#inpo{
+  width:60%;
+  height:5%;
+  display: flex;
+  align-items:center;
+  gap:5%;
+  justify-content: end;
+  
+}
+
+.point{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:15px;
+  width: calc(100% + 20px);
+  height: calc(50% + 10px);
+  background-color: rgb(103, 51, 0);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  border-radius: 20px;
+  
+
+}
+
+#more_beer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+   width:10vw;
+   height:100vh;
+   
+  
+}
+
+#more_beer li {
+  display: flex;
+  flex-direction: column;
+ 
+  width:90%;
+  
+  aspect-ratio:5/5;
+  transition: all 0.4s ease-in-out;
+}
+
+#more_beer li:hover{
+  width:100%;
+}
+
+#more_beer img {
+  width:100%;
+  aspect-ratio:5/5;
+}
+
+
+
+.img_B{
+  width:100%;
+  
+  aspect-ratio: 5/5;
+  border-radius:30px;
+
+}
+
+#new-beer{
+  
+  text-align: center;
+  
+  right:10vw;
+  top:5vw;
+}
+
+
+
+
+.rolling {
+    display: flex; 
+    align-items: center;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+
+  
+    white-space: nowrap; 
+}
+
+/* .rolling p 스타일 */
+.rolling p {
+    font-size: 500px; /* 글자 크기 */
+    /* width: 300%; 이 속성은 여기서는 적절하지 않을 수 있습니다. */
+    /* 텍스트 내용의 길이에 따라 자동으로 너비가 결정되게 하려면 제거합니다. */
+    padding: 0 50px; /* 각 텍스트 사이의 간격 (원하는 만큼 조절) */
+    display: inline-block; /* flex item이지만 텍스트처럼 동작하게 */
+    animation: scroll-left 5s linear infinite;
+}
+
+/* @keyframes 정의: 왼쪽으로 이동하는 애니메이션 */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* 시작 지점: 원래 위치 */
+    }
+    100% {
+        transform: translateX(-100%); /* 끝 지점: 텍스트 너비의 100%만큼 왼쪽으로 이동 */
+                                     /* 모든 p 태그의 총 너비만큼 움직여야 자연스럽게 반복됩니다. */
+    }
+}
+
+
+.Sub_B_sec{
+  display: flex;
+  width:100%;
+  height:100vh;
+  padding:5vw;
+}
+#img_B{
+  width:100%;
+  
+  aspect-ratio: 5/5;
+  border-radius:30px;
+
+}
+
+
+.Country_img{
+  
+  z-index:4;
+  width:300px;
+  height:200px;
+  /* aspect-ratio:961/640; */
+}
+
+.img_B_wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:100%;
+  padding:10vw;
+  transition: all 1s ease-in-out;
+}
+
+.img_B_wrap:hover{
+  width:110%;
+  
+}
+
+
+.beer_description_text{
+  font-size:20px;
+  font-weight:600;
+  width:60%;
+   display: flex;
+   flex-direction: column;
+
+  justify-content: center;
+}
+
+.beer_description_text :nth-child(1) {
+ font-size:30px;
+  font-weight:600;
+}
+
+.beer_description_text :nth-child(2) {
+ font-size:70px;
+  font-weight:700;
+}
+
+
+/* Sub.css */
+
+/* 모달 오버레이 */
+.modal-overlay {
+    position: fixed; /* 화면 전체를 덮도록 고정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 다른 콘텐츠 위에 표시 */
+}
+
+
+.modal-content {
+    background-color: white; /* 모달 배경색 */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative; /* 닫기 버튼의 기준점 */
+    max-width: 90%; /* 화면 너비의 최대 90% */
+    max-height: 90%; /* 화면 높이의 최대 90% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 이미지가 모달을 벗어나지 않게 */
+}
+
+
+.modal-image {
+    max-width: 100%; /* 모달 내용에 맞춰 이미지 크기 조절 */
+    max-height: 100%;
+    object-fit: contain; /* 이미지가 잘리지 않고 전체 보이도록 */
+}
+
+
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    line-height: 1; /* 버튼 내부 텍스트 정렬 */
+}
+
+.modal-close-button:hover {
+    color: red;
+}
+
+
+/* Sub.css */
+
+/* --- 좋아요 버튼 제거됨 --- */
+/* .main-beer-heart-icon {} */
+
+/* --- 돌아가기 버튼 컨테이너 및 버튼 스타일 --- */
+.sub-back-button-container {
+    position: fixed; /* 화면에 고정 */
+    top: 20px; /* 상단에서 20px 떨어짐 */
+    left: 20px; /* 좌측에서 20px 떨어짐 */
+    z-index: 1001; /* 모달 위에 오도록 (모달은 1000) */
+}
+
+.sub-back-button {
+    display: inline-block; /* 텍스트 크기에 맞게 */
+    padding: 10px 15px;
+    background-color: #333; /* 어두운 배경 */
+    color: white; /* 흰색 글씨 */
+    text-decoration: none; /* 밑줄 제거 */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.sub-back-button:hover {
+    background-color: #555; /* 호버 시 색상 변경 */
+}
+
+
+/* --- 푸터 스타일 --- */
+.sub-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* 밝은 회색 배경 */
+    margin-top: 40px; /* 위쪽 여백 */
+    border-top: 1px solid #eee; /* 상단 구분선 */
+    color: #555;
+    font-size: 14px;
+}
+
+.sub-footer p {
+    margin: 5px 0; /* 단락별 여백 */
+}
+
+
