@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # 또는 main - 프로젝트의 기본 브랜치 이름과 일치시키세요.
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # 사용하는 Node.js 버전과 일치시키세요.
+
+      - name: Install dependencies 🔧
+        run: npm install # 또는 yarn install
+
+      - name: Build 🏗️
+        run: npm run build # 또는 yarn build
+
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build # 빌드된 파일이 있는 폴더 지정
+          publish_branch: gh-pages # 배포할 브랜치 이름 (자동으로 생성됨)
