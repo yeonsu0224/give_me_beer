@@ -124,7 +124,7 @@ function Sub() {
             backgroundSize: "contain",
           }}></div>
 
-          <img className="Country_img" src={`/img/Country/${beer.country}.jpg`} alt={`${beer.country} 국기`}></img>
+          <img className="Country_img" src={`./img/Country/${beer.country}.jpg`} alt={`${beer.country} 국기`}></img>
         </div>
 
         <div className="beer_description_text">
