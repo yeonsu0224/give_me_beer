@@ -263,48 +263,43 @@
 }
 
 
-/* Sub.css */
 
-/* --- 좋아요 버튼 제거됨 --- */
-/* .main-beer-heart-icon {} */
-
-/* --- 돌아가기 버튼 컨테이너 및 버튼 스타일 --- */
 .sub-back-button-container {
-    position: fixed; /* 화면에 고정 */
-    top: 20px; /* 상단에서 20px 떨어짐 */
-    left: 20px; /* 좌측에서 20px 떨어짐 */
-    z-index: 1001; /* 모달 위에 오도록 (모달은 1000) */
+    position: fixed; 
+    top: 20px; 
+    left: 20px; 
+    z-index: 1001; 
 }
 
 .sub-back-button {
-    display: inline-block; /* 텍스트 크기에 맞게 */
+    display: inline-block; 
     padding: 10px 15px;
-    background-color: #333; /* 어두운 배경 */
-    color: white; /* 흰색 글씨 */
-    text-decoration: none; /* 밑줄 제거 */
+    background-color: #333; 
+    color: white; 
+    text-decoration: none; 
     border-radius: 5px;
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 .sub-back-button:hover {
-    background-color: #555; /* 호버 시 색상 변경 */
+    background-color: #555; 
 }
 
 
-/* --- 푸터 스타일 --- */
+
 .sub-footer {
     text-align: center;
     padding: 20px;
-    background-color: #f0f0f0; /* 밝은 회색 배경 */
-    margin-top: 40px; /* 위쪽 여백 */
-    border-top: 1px solid #eee; /* 상단 구분선 */
+    background-color: #f0f0f0; 
+    margin-top: 40px; 
+    border-top: 1px solid #eee; 
     color: #555;
     font-size: 14px;
 }
 
 .sub-footer p {
-    margin: 5px 0; /* 단락별 여백 */
+    margin: 5px 0; 
 }
 
 

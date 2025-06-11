@@ -1,19 +1,18 @@
-import { useMemo, useEffect, useState } from "react"; // useState 훅 임포트
+import { useMemo, useEffect, useState } from "react"; 
 import React from "react";
-import { Link } from "react-router-dom"; // Link 임포트
-import "./Sub.css" // Sub.css 임포트
-import beerData from "./beers"; // beerData 임포트
-import { useParams, } from "react-router-dom"; // useParams 임포트
+import { Link } from "react-router-dom"; 
+import "./Sub.css" 
+import beerData from "./beers"; 
+import { useParams, } from "react-router-dom"; 
 
 
 function Sub() {
 
   const { id } = useParams(); 
   
-  // 모달의 열림/닫힘 상태를 관리하는 state
-  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 추가
+ 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
-  // Hooks 호출을 조건문 밖으로 이동시킵니다.
   const getRandomRecommendations = (excludeId, count = 4) => {
     const filtered = beerData.filter((b) => b.id !== excludeId);
     const shuffled = [...filtered].sort(() => Math.random() - 0.5);
@@ -21,7 +20,7 @@ function Sub() {
   };
   const recommendations = useMemo(() => getRandomRecommendations(id), [id]);
 
-  // beer 객체를 찾습니다.
+  
   const beer = beerData.find((b) => b.id === id); 
 
   useEffect(() => {
@@ -40,18 +39,18 @@ function Sub() {
     Bg.style.background = countryBgMap[beer.country] || "white";
   }, [beer]);
 
-  // 이미지 클릭 시 모달 열기
+
   const handleImageClick = () => {
     setIsModalOpen(true);
   };
 
-  // 모달 닫기 (오버레이 클릭 시)
+
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
 
-  // 만약 beer 객체를 찾지 못했을 경우의 처리 (이 return은 Hooks 호출 이후에 와야 합니다.)
+
   if (!beer) {
     return (
       <section id="sub-sec" className="sub-not-found">
@@ -65,7 +64,7 @@ function Sub() {
 
   return(
     <section id="sub-sec">
-      {/* 좌측 상단 돌아가기 버튼 (Nav 컴포넌트가 아닌 Sub 페이지 자체에 추가) */}
+
       <div className="sub-back-button-container">
         <Link to="/" className="sub-back-button">🍻 돌아가기</Link>
       </div>
@@ -79,30 +78,20 @@ function Sub() {
               backgroundImage: `url(${beer.imgsrc})`,
               backgroundPosition: "center",
               backgroundSize: "contain",
-              cursor: 'pointer', // 클릭 가능한 요소임을 표시
-              position: 'relative' // 하트 아이콘 제거했으므로 relative 필요 없을 수 있지만, 혹시 모르니 유지
+              cursor: 'pointer', 
+              position: 'relative' 
             }}
-            onClick={handleImageClick} // 이미지 클릭 시 모달 열기 함수 호출
+            onClick={handleImageClick} 
           >
-            {/* 좋아요 버튼 영역을 완전히 제거합니다. */}
-            {/* <div
-              className="main-beer-heart-icon" 
-              style={{ ... }}
-              onClick={handleSubPageHeartClick}
-            >
-              ❤️
-            </div> */}
+           
           </div>
 
           <ul id="inpo">
-              {/* beer_name 부분은 주석 처리되어 있습니다. 필요에 따라 다시 추가하세요. */}
-              {/* <li id="beer_name">{beer.name}<p>도수 : {beer.abv || "???"}, 유형 : {beer.type} &nbsp; 나라 : {beer.country}</p></li> */}
-              <li className="point">{beer.taste}</li>
+                   <li className="point">{beer.taste}</li>
               <li className="point">{beer.aroma}</li>
-              <li className="point">{beer.feature}</li> {/* taste가 두 번 있었습니다. feature로 변경 */}
+              <li className="point">{beer.feature}</li> 
               <li className="point">{beer.pairings}</li>
-              {/* description 부분도 주석 처리되어 있습니다. 필요에 따라 다시 추가하세요. */}
-              {/* <li className="explan">"{beer.description}"</li> */}
+           
           </ul>
         </div>
         
