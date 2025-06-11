@@ -1,7 +1,7 @@
 {
  "name": "give_me_beer",
  "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://yeonsu0224.github.io/give_me_beer", 
  "private": true,
  "dependencies": {
   "@testing-library/dom": "^10.4.0",
