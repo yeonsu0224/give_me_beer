@@ -1,8 +1,7 @@
 
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './components/Main';
-import Nav from './components/Nav';
 
 import Sub from './components/sub';
 
@@ -12,12 +11,11 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <Router>
 
     
     <Routes>
     <Route path="/" element={<Main />} />
-
     <Route path="/sub/:id" element={<Sub />} />
     </Routes>
 
@@ -25,7 +23,7 @@ function App() {
     
     
     
-    </BrowserRouter>
+    </Router>
   );
 }
 
